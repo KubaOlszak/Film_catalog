@@ -24,10 +24,10 @@ class FilmRoll
     private ?int $sensibility = null;
 
     #[ORM\Column(nullable: true)]
-    private ?array $format = null;
+    private ?int $format = null;
 
     #[ORM\Column(nullable: true)]
-    private ?array $type = null;
+    private ?string $type = null;
 
     #[ORM\ManyToOne(inversedBy: 'filmRolls')]
     private ?Developer $developer = null;
@@ -88,38 +88,26 @@ class FilmRoll
         return $this;
     }
 
-    public function getFormat(): ?array
+    public function getFormat(): ?int
     {
         return $this->format;
     }
 
-    public function setFormat(?array $format): static
+    public function setFormat(?int $format): static
     {
         $this->format = $format;
 
         return $this;
     }
 
-    public function getType(): ?array
+    public function getType(): ?string
     {
         return $this->type;
     }
 
-    public function setType(?array $type): static
+    public function setType(?string $type): static
     {
         $this->type = $type;
-
-        return $this;
-    }
-
-    public function getFramesQty2(): ?int
-    {
-        return $this->frames_qty2;
-    }
-
-    public function setFramesQty2(?int $frames_qty2): static
-    {
-        $this->frames_qty2 = $frames_qty2;
 
         return $this;
     }
